@@ -40,4 +40,36 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    // Simulate API request to get SVG content
+    function simulateApiRequest() {
+      // In a real scenario, you would fetch the SVG content from an API
+      // For simulation purposes, create a sample SVG string
+      return `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <circle id="myCircle" cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+    </defs>
+    <use href="#myCircle" />
+</svg>`;
+    }
+
+    // Get SVG content from the simulated API request
+    const svgString = simulateApiRequest();
+
+    // Convert SVG string to Blob
+    const svgBlob = new Blob([svgString], { type: "image/svg+xml" });
+
+    // Convert Blob to Data URL
+    const blobUrl = URL.createObjectURL(svgBlob);
+
+    // Store Blob URL in local storage
+    const reader = new FileReader();
+
+    reader.onload = function () {
+      // Store the data URL in local storage
+      localStorage.setItem("svgUrl", reader.result);
+    };
+
+    reader.readAsDataURL(svgBlob);
+  </script>
 </html>

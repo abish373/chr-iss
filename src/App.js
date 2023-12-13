@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { icon as Iconblob, directSvg } from './IonsEnum';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <p>App rendering behaviour</p>
+        <svg>
+          <use xlinkHref={Iconblob.circle?.url} href={Iconblob.circle?.url} />
+        </svg>
+      </div>
+      <div>
+        <p>Without external endpoint</p>
+        <svg width="100" height="100" viewBox='0 0 100 100'>
+          <use xlinkHref={directSvg.circle.url} href={directSvg.circle.url} />
+        </svg>
+      </div>
     </div>
   );
 }
