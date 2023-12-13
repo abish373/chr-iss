@@ -7,13 +7,13 @@ function App() {
   return (
     <div className="App">
       <div>
-        <p>App rendering behaviour</p>
+        <p>Base64 blob</p>
         <svg>
           <use xlinkHref={Iconblob.circle?.url} href={Iconblob.circle?.url} />
         </svg>
       </div>
       <div>
-        <p>Without external endpoint</p>
+        <p>SVG reference</p>
         <svg width="100" height="100" viewBox='0 0 100 100'>
           <use xlinkHref={directSvg.circle.url} href={directSvg.circle.url} />
         </svg>
